@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TabloidFullStack.Repositories;
 using TabloidFullStack.Models;
+using Microsoft.Extensions.Hosting;
 
 namespace TabloidFullStack.Controllers
 {
@@ -19,6 +20,13 @@ namespace TabloidFullStack.Controllers
         public IActionResult Get()
         {
             return Ok(_categoryRepository.GetAllCategories());
+        } 
+        [HttpPost]
+        public IActionResult Post(Category category)
+        {
+            _categoryRepository.AddCategory(category);
+            return CreatedAtAction("Get", new { id = category.Id }, category);
         }
     }
+   
 }
