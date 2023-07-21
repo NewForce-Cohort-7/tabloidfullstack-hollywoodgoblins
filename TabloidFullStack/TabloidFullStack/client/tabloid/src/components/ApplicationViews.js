@@ -5,6 +5,7 @@ import TagList from "./tags/TagList";
 import { PostList } from "./Posts/PostList";
 
 
+import { CategoryList } from "./Categories/CategoryList";
 
 export default function ApplicationViews() {
 
@@ -13,6 +14,8 @@ export default function ApplicationViews() {
         <Route path="/" element={<Hello />} />
         <Route path="tags"element={<TagList />} />
         <Route path="posts"element={<PostList />} />
+        <Route path="tags" element={<TagList />} />
+        <Route path="/categories" element={<CategoryList/>}/>
       </Routes>
    );
  
