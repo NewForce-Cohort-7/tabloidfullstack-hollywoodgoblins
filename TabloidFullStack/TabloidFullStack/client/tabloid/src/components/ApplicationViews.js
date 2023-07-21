@@ -6,6 +6,7 @@ import { PostList } from "./Posts/PostList";
 
 
 import { CategoryList } from "./Categories/CategoryList";
+import { CategoryForm } from "./Categories/CategoryForm";
 
 export default function ApplicationViews() {
 
@@ -15,6 +16,7 @@ export default function ApplicationViews() {
         <Route path="tags"element={<TagList />} />
         <Route path="posts"element={<PostList />} />
         <Route path="/categories" element={<CategoryList/>}/>
+        <Route path="/categories/add" element={<CategoryForm/>}/>
       </Routes>
    );
  
