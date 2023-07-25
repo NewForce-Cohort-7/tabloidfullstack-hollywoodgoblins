@@ -27,6 +27,20 @@ namespace TabloidFullStack.Controllers
             _categoryRepository.AddCategory(category);
             return CreatedAtAction("Get", new { id = category.Id }, category);
         }
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _categoryRepository.DeleteCategory(id);
+                return NoContent(); // 204 No Content
+            }
+            catch (Exception ex)
+            {
+                // Log the error or handle it as appropriate
+                return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error.");
+            }
+        }
     }
    
 }
