@@ -14,8 +14,10 @@ export const CategoryForm = () => {
             Name: newCategory.name
         }
         return addCategory(dataToAPI)
-            .then(navigate("/"))
-    }
+            .then(() => {
+                navigate("/categories")
+            })
+        }
     return (
     <form className="category-form">
     <fieldset>

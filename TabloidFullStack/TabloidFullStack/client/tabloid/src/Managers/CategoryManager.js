@@ -16,3 +16,9 @@ export const addCategory = (singleCategory) => {
         body: JSON.stringify(singleCategory)
     })
 }
+
+export const deleteCategory = (categoryId) => {
+    return fetch(`${baseUrl}/${categoryId}`, {
+      method: "DELETE",
+    });
+  };
