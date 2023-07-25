@@ -15,7 +15,7 @@ export const CategoryForm = () => {
         }
         return addCategory(dataToAPI)
             .then(() => {
-                navigate("/categories")
+                navigate("/category")
             })
         }
     return (
