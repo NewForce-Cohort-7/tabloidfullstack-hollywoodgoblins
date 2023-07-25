@@ -27,6 +27,7 @@ namespace TabloidFullStack.Controllers
             _categoryRepository.AddCategory(category);
             return CreatedAtAction("Get", new { id = category.Id }, category);
         }
+        
     }
    
 }
