@@ -41,6 +41,27 @@ namespace TabloidFullStack.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error.");
             }
         }
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Category category)
+        {
+            if (id != category.Id)
+            {
+                return BadRequest();
+            }
+
+            _categoryRepository.UpdateCategory(category);
+            return NoContent();
+        }
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var category = _categoryRepository.GetCategoryById(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return Ok(category);
+        }
     }
    
 }
